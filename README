@@ -1,0 +1,1 @@
+sudo docker run --restart=on-failure:5 -d -p 443:1984 --name shadowsocks -v /home/whiteworld/docker-shadowsocks/conf:/etc/shadowsocks whiteworld/shadowsocks -c /etc/shadowsocks/shadowsocks.json
