@@ -9,5 +9,7 @@ RUN apt-get update && \
     apt-get install -y python-pip python-m2crypto
 RUN pip install shadowsocks
 
-# Configure container to run as an executable
-ENTRYPOINT ["/usr/local/bin/ssserver"]
+ADD run.sh /
+RUN chmod +x /run.sh
+
+ENTRYPOINT ["/run.sh"]

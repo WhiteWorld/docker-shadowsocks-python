@@ -1,1 +1,1 @@
-sudo docker run --restart=on-failure:5 -d -p 443:1984 --name shadowsocks -v $PWD/conf:/etc/shadowsocks whiteworld/shadowsocks -c /etc/shadowsocks/shadowsocks.json
+sudo docker run --privileged -e IPV6ADDR=2001:470:c:574::8888:20/112 -e IPV6GW=2001:470:c:574::8888:1 --restart=on-failure:5 -d -p <port1>:<port1> -p <port2>:<port2> --name ssipv6 -v /home/whiteworld/docker-shadowsocks/conf:/etc/shadowsocks test/ssipv6
