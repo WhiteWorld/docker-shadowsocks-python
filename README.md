@@ -1,6 +1,6 @@
 ## 介绍
 
-使用Docker部署Shadowsocks Python版本，针对谷歌学术禁止VPS的IP访问的问题，使用IPV6访问谷歌学术。
+使用 Docker 部署 Shadowsocks Python 版本，针对谷歌学术禁止 VPS 的 IP 访问的问题，使用 IPV6 访问谷歌学术。
 
 ## IPV6 访问谷歌学术原理
 
@@ -15,14 +15,16 @@
 
 
 ## 使用方法
-
+    
+    # clone 代码
     git clone git@github.com:WhiteWorld/docker-shadowsocks-python.git
     cd docker-shadowsocks-python
     mkdir conf
+    # 创建配置文件
     vim conf/shadowsocks.json
-    # image_name 为镜像名称
-    sudo docker build -t <image_name> .
-    # run
+    # build docke 镜像
+    docker build -t <image_name> .
+    # 运行 docker 容器
     sudo docker run  -d -p <port1>:<port1> -p <port2>:<port2> --name <container_name> \
     -v $PWD/conf:/etc/shadowsocks <image_name>
 
