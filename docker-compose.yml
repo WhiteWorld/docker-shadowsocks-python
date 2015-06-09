@@ -1,0 +1,8 @@
+ssp:
+  build: .
+  ports:
+   - "443:1984"
+   - "8708:8708"
+   - "8709:8709"
+  volumes:
+   - ./conf:/etc/shadowsocks
